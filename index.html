@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+
+  <!-- FullCalendar CSS and Script -->
+
+  <link href='fullcalendar/main.css' rel='stylesheet' />
+  <script src='fullcalendar/main.js'></script>
+
+  <!-- Google fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Titillium+Web:ital,wght@0,300;0,700;1,300;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- my CSS -->
+
+  <link rel="stylesheet" href="app.css">
+  <title>Patria</title>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navigation" tabindex="0" data-bs-smooth-scroll="true" data-bs-offset="100">
+
+  <!-- Augseja galerija -->
+
+  <div id="carouselGallery" class="carousel slide" data-bs-ride="true">
+    <ol class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1517732306149-e8f829eb588a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Third slide">
+      </div>
+    </div>
+  </div>
+
+  <!-- navigacija -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark2 sticky-top" id="navigation">
+    <div class="container">
+      <a href="#top" id="vairodzins" class="navbar-brand nav-item ml-3"><img src="img/Vairodzins-ico.png" alt="Patria"
+          height="50px"></a>
+      <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarLinks"
+        aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="navbar-collapse collapse justify-content-end py-3" id="navbarLinks">
+        <ul class="navbar-nav ml-3">
+          <li class="nav-item"><a href="#parMums" class="nav-link">Par mums</a></li>
+          <li class="nav-item"><a href="#amatpersonas" class="nav-link">Amatpersonas</a></li>
+          <li class="nav-item"><a href="#galerija" class="nav-link">Galerija</a></li>
+          <li class="nav-item"><a href="#kalendars" class="nav-link">Kalendārs</a></li>
+          <li class="nav-item">
+            <button type="button" class="btn" id="login-button" data-bs-toggle="modal" data-bs-target="#login-dialog">
+              Patriešiem
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- login logs -->
+
+  <div class="modal fade" id="login-dialog" tabindex="-1" role="dialog" aria-labelledby="login-dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content p-3">
+        <form>
+          <div class="form-floating">
+            <input type="email" id="login-email" class="form-control my-3" placeholder="E-pasta adrese" required>
+            <label for="login-  email">E-pasta adrese</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" id="login-password" class="form-control my-3" placeholder="Parole" required>
+            <label for="login-password">Parole</label>
+          </div>
+          <div class="d-flex justify-content-center"><button type="submit" class="btn btn-primary">Peslēgties</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- main content -->
+
+  <div id="top"></div>
+  <div class="container my-p text-center">
+    <div id="parMums"></div>
+    <h1 class="display-4">Latviešu studentu korporācija </br><span
+        class="alt-font text-primary display-1">Patria</span></h1>
+    <h3 class="devize-1">Par draudzību un darbu, par Tēvijas brīvi</h3>
+    <h3 class="devize-2">Fidei et veritati</h3>
+  </div>
+  <div class="container col-md-9 col-lg-7 col-xl-6">
+    <div class="d-flex justify-content-center">
+      <h5 class="mb-4 lead text-center">Esam 16. korporācija, no 23 esošajām studentu korporācijām Latvijā, pēc vecākuma
+        principa.</h5>
+    </div>
+    <div class="d-flex justify-content-center">
+      <p class="text-center col-md-8">Patria ir dibināta pie Latvijas Universitātes (LU) 20.09.1926., par korporāciju
+        pārveidojot 1908. gadā dibināto studentu biedrību “Patria” (līdz 1923. gadam nosaukums – Rīgas Latviešu studentu
+        savienība, RLSS)</p>
+    </div>
+
+    <div class="row mt-5">
+      <img src="img/Vapenis.png" alt="Vapenis" class="col-6 col-md-3">
+      <img src="img/Dekelis.png" alt="Dekelis" class="col-6 col-md-3">
+      <img src="img/Zvaigzne.png" alt="Zvaigzne" class="col-6 col-md-3">
+      <img src="img/Cirkelis.png" alt="Cirkelis" class="col-6 col-md-3">
+    </div>
+
+    <!-- nosleptais teksts -->
+
+    <div class="collapse mt-5 about">
+      <p class="fs-6">Protams, kā jau visas studentu korporācijas mēs vadāmies pēc kopējiem principiem, kuru izkopšanā
+        ir pagājis
+        krietns laika sprīdis. Šie principi vieno ne tikai mūsu korporācijas biedrus un visus korporantus, bet arī
+        ikvienu, kurš savās domās un darbos vadās pēc tādiem ideāliem kā draudzība, uzticība, godīgums un tēvijas
+        mīlestība. Ja dzīvē it bieži jāsaskaras ar cilvēkiem, kuri darbojas upurējot savus ideālus pašlabuma pēc, tad
+        korporācijas sevī vieno taisnus un godprātīgus biedrus.
+
+        Tieši šī ir vislielākā korporāciju vērtība un tādēļ mēs visi cenšamies to rūpīgi saglabāt un izkopt. Var teikt,
+        ka
+        korporācija ir idealizēta pasaule, kuru notur jaunības enerģija, entuziasms, cēlie mērķi un, protams, arī
+        pieredze
+        un atbalsts no vecāko biedru puses. Korporanti šīs idealizētās pasaules principus arī nes dzīvē, tādēļ tautai
+        tie
+        ir vērtīgs ieguvums.
+
+        Jebkurā korporācijā ir biedri, kuru vārds ir cildināts un turēts augstā piemiņā visā tautas apziņā. Mūsu
+        korporācijas rindās ir stāvējuši tādi tautā pazīstami cilvēki, kā ģen. K.Berķis, agr. J. Sudrabs. Trīszvaigžņu
+        ordeni Latvijas laikā ir saņēmuši aptuveni divdesmit patriešu, atjaunotā Latvija ir pasniegusi Trīszvaigžņu
+        ordeni
+        mūsu biedriem, filistriem – Tālivaldim Kronbergam un Paulam Lazdam.
+
+        Ar ko tad ievērojami ir mūsu korporācijas pārējie biedri? Viņu vārdi nav sabiedrībā tik plaši pazīstami, taču
+        ikkatrs strādā savā nozarē Latvijas labā un dara to pēc labākās sirdsapziņas. Ko dara tie kuri nestrādā? Tie ir
+        mūsu fukši un jaunie komiltoņi, kuri droši un neatlaidīgi cīnās studiju laukā, aktīvi darbojas korporācijā un
+        mācās no vecāko korporantu pieredzes, lai varētu būtu par labu piemēru korporācijā, sabiedrībā un ģimenē.</p>
+      <h2 class="text-center alt-font text-primary">Mērķi</h2>
+      <p>Patria's mērķi ir audzināt tēvzemes mīlestībai, latviešu tautai un latviešu valodai; izkopt nacionālo un
+        sabiedrisko stāju, stiprināt viņu goda prātu un patiesības izjūtu, pienākuma apziņu, vienprātību, draudzību savā
+        starpā un veicināt viņu akadēmisko izglītību un izaudzināt par cienīgiem latviešu tautas piederīgiem un
+        krietniem
+        buršiem.
+      </p>
+      <h2 class="text-center alt-font text-primary">Devīzes</h2>
+      <p>Savu mērķu sasniegšanai korporācija Patria likusi darbības pamatā šādas devīzes:</br>
+        • <strong>Par draudzību un darbu, par Tēvijas brīvi.</strong> Šī mūsu devīze simboliski izteikta mūsu karoga
+        krāsās: gaiši oranžs-zalš-zelts, pie kam oranžā krāsa simbolizē tēvijas brīvi, zaļā - draudzību un zelta -
+        darbu.</br>
+        • <strong>Fidei et veritati</strong> izteikta deķeļa zelta uzšuvēs, kur krustojas divi latviska stila ornamenti,
+        vārdiem: Kur uzticību patiesībai rada, Tur ceļi zelta vienoti mūs vada.</p>
+
+      <h2 class="text-center alt-font text-primary">Simboli</h2>
+      <p>Korporācijas ārējie simboli ir karogs, vapenis, krāsu cepure - deķelis, krāsu šarfa, krāsu lenta, krāsu
+        rapieris
+        un zēnu cirķelis. Korporācijas augstākais simbols ir karogs, kuru atjaunoja un 1955. gada 5. martā Grand
+        Rapidos,
+
+        Korporācijas vapeni veidojas tēlnieks Kārlis Zāle. Patria's vapenis, sava īpatnējā stila dēļ, krasi atšķiras no
+        pārējiem korporāciju vapeņiem. Vapeni veidojot, tēlnieks mākslinieks Zāle ir gājis pilnīgi jaunus ceļus,
+        ietverot
+        tanī, kā viņš pats teicis, daudzus nacionālus, latviskus elementus. Korporācija, brīvā pasaulē, vapeni atjaunoja
+        un to kokā griezis kokgriezējs Hugo Mercs, Fr. Acad. Atjaunoto vapeni 1966. gada 17. septembrī Toronto, Kanādā,
+        iesvētīja arhibīskaps A. Lūsis, Latv.
+
+        Ornamentus deķeļa uzšuvēs zīmējis mākslinieks Jūlijs Madernieks, bet iztulkojumu tiem devis fil! Alberts
+        Teteris.
+        Patria's zēnu nozīme (cirķelis) arī ir mākslinieka Jūlija Madernieka zīmēta.</p>
+      <div class="container d-flex justify-content-center my-5">
+        <button class="btn about-button" type="button" data-bs-toggle="collapse" data-bs-target=".about"
+          aria-expanded="false" aria-controls="about">Rādīt mazāk</button>
+      </div>
+    </div>
+
+    <div class="collapse show about">
+      <div class="container d-flex justify-content-center my-5">
+        <button class="btn about-button" type="button" data-bs-toggle="collapse" data-bs-target=".about"
+          aria-expanded="false" aria-controls="about">Lasīt vairāk</button>
+      </div>
+    </div>
+
+
+    <!-- amatpersonas -->
+
+  </div>
+  <div id="amatpersonas"></div>
+  <div class="container-fluid amatpersonas bg-dark d-flex justify-content-center py-5 mb-5">
+    <div class="col-lg-10 col-xxl-8 patria">
+      <h2 class="text-center text-primary mb-5 alt-font">Patria's amatpersonas</h2>
+      <div class="row text-center justify-content-center">
+        <div class="col-8 col-sm-6 col-lg-3 my-3 d-flex justify-content-center">
+          <div class="card bg-dark border-primary text-light p-1">
+            <img
+              src="https://images.unsplash.com/photo-1590086782792-42dd2350140d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Portrait" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title text-uppercase">Vārds Uzvārds</h5>
+              <p class="card-text text-muted">t/l seniors</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-8 col-sm-6 col-lg-3 my-3 d-flex justify-content-center">
+          <div class="card bg-dark border-primary text-light p-1">
+            <img
+              src="https://images.unsplash.com/photo-1590086782792-42dd2350140d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Portrait" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title text-uppercase">Vārds Uzvārds</h5>
+              <p class="card-text text-muted">t/l viceseniors</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-8 col-sm-6 col-lg-3 my-3 d-flex justify-content-center">
+          <div class="card bg-dark border-primary text-light p-1">
+            <img
+              src="https://images.unsplash.com/photo-1590086782792-42dd2350140d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Portrait" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title text-uppercase">Vārds Uzvārds</h5>
+              <p class="card-text text-muted">t/l sekretārs</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-8 col-sm-6 col-lg-3 my-3 d-flex justify-content-center">
+          <div class="card bg-dark border-primary text-light p-1">
+            <img
+              src="https://images.unsplash.com/photo-1590086782792-42dd2350140d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Portrait" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title text-uppercase">Vārds Uzvārds</h5>
+              <p class="card-text text-muted">t/l oldermanis</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-5 mb-3">
+        <button type="button" class="btn btn-primary col-8 col-xl-6" id="contact-button" data-bs-toggle="modal" data-bs-target="#contact-form">Sazinies ar mums</button>
+      </div>
+
+      <!-- kontaktforma -->
+
+      <div class="modal fade" id="contact-form" tabindex="-1" role="dialog" aria-labelledby="contact-form"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+          <div class="modal-content p-3">
+            
+            <form>
+              <div class="form-floating">
+                <input type="email" id="contactEmail" class="form-control my-3" placeholder="E-pasts" required>
+                <label for="contactEmail">E-pasts</label>
+              </div>
+              <div class="form-floating">
+                <textarea name="contactMessage" id="contactMessage" class="form-control" placeholder="Tava ziņa"
+                  style="height: 150px" required></textarea>
+                <label for="contactMessage">Tava ziņa</label>
+              </div>
+              <button type="submit" class="btn btn-primary my-3" id="submit-button">Nosūtīt</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="contact-thankyou" tabindex="-1" role="dialog" aria-labelledby="contact-thankyou"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+          <div class="modal-content pt-3 text-center">
+            <p class="fs-5">Paldies, esam saņēmuši tavu ziņu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <!-- Galerija -->
+
+  <div id="galerija"></div>
+  <div class="container-fluid">
+    <h2 class="text-center text-primary mb-5 alt-font">Ieskats mūsu dzīvē</h2>
+    <div id="scrolling-wrapper" class="row flex-row flex-nowrap overflow-auto">
+      <div class="card-body gallery-card mx-1"><a href="" data-bs-toggle="modal" data-bs-target="#gallery-img-1"><img src="https://picsum.photos/id/455/400" alt="Attels"></a></div>
+      <div class="card-body gallery-card mx-1"><a href="" data-bs-toggle="modal" data-bs-target="#gallery-img-2"><img src="https://picsum.photos/id/222/400" alt="Attels"></a></div>
+      <div class="card-body gallery-card mx-1"><a href="" data-bs-toggle="modal" data-bs-target="#gallery-img-3"><img src="https://picsum.photos/id/200/400" alt="Attels"></a></div>
+      <div class="card-body gallery-card mx-1"><a href="" data-bs-toggle="modal" data-bs-target="#gallery-img-4"><img src="https://picsum.photos/id/123/400" alt="Attels"></a></div>
+      <div class="card-body gallery-card mx-1"><a href="" data-bs-toggle="modal" data-bs-target="#gallery-img-5"><img src="https://picsum.photos/id/555/400" alt="Attels"></a></div>
+      <div class="card-body gallery-card mx-1"><a href="" data-bs-toggle="modal" data-bs-target="#gallery-img-6"><img src="https://picsum.photos/id/667/400" alt="Attels"></a></div>
+      <div class="card-body gallery-card mx-1"><a href="" data-bs-toggle="modal" data-bs-target="#gallery-img-7"><img src="https://picsum.photos/id/231/400" alt="Attels"></a></div>
+      <div class="card-body gallery-card mx-1"><a href="" data-bs-toggle="modal" data-bs-target="#gallery-img-8"><img src="https://picsum.photos/id/670/400" alt="Attels"></a></div>
+      <div class="card-body gallery-card mx-1"><a href="" data-bs-toggle="modal" data-bs-target="#gallery-img-9"><img src="https://picsum.photos/id/300/400" alt="Attels"></a></div>
+    </div>
+
+
+    <!-- Galerijas popup -->
+
+    <div class="modal fade" id="gallery-img-1" aria-labelledby="image1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <img src="https://picsum.photos/id/455/1500/1000" alt="Attels">
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="gallery-img-2" aria-labelledby="image2" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <img src="https://picsum.photos/id/222/1500/1000" alt="Attels">
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="gallery-img-3" aria-labelledby="image3" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <img src="https://picsum.photos/id/200/1500/1000" alt="Attels">
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="gallery-img-4" aria-labelledby="image4" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <img src="https://picsum.photos/id/123/1500/1000" alt="Attels">
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="gallery-img-5" aria-labelledby="image5" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <img src="https://picsum.photos/id/555/1500/1000" alt="Attels">
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="gallery-img-6" aria-labelledby="image6" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <img src="https://picsum.photos/id/667/1500/1000" alt="Attels">
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="gallery-img-7" aria-labelledby="image7" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <img src="https://picsum.photos/id/231/1500/1000" alt="Attels">
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="gallery-img-8" aria-labelledby="image8" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <img src="https://picsum.photos/id/670/1500/1000" alt="Attels">
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="gallery-img-9" aria-labelledby="image9" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <img src="https://picsum.photos/id/300/1500/1000" alt="Attels">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Calendar -->
+
+  <div id="kalendars"></div>
+  <h2 class="text-center text-primary mb-5 alt-font">Pasākumu kalendārs</h2>
+  <div class="container d-flex justify-content-center mb-5">
+    <div id='calendar' class="patriaCalendar col-sm-10"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-white">
+    <div class="container p-4 pb-0">
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-primary rounded-circle m-1" href="https://www.facebook.com/korpPatria">
+          <i class="bi bi-facebook text-white"></i>
+        </a>
+        <!-- Twitter -->
+        <a class="btn btn-outline-primary rounded-circle m-1" href="https://twitter.com/korpPatria">
+          <i class="bi bi-twitter text-white"></i>
+        </a>
+        <!-- P!K! -->
+        <a class="btn btn-outline-primary rounded-circle m-1" href="http://www.pk.lv/">
+          <img src="img/pk.svg" alt="p!k!" style="height: 1rem" class="mb-1"></a>
+      </section>
+    </div>
+
+    <div class="text-center text-muted p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-muted" href="http://patria.lv/">Patria</a>
+    </div>
+
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
